@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        function onPress(){
+           
+            fetch("http://localhost:3000/todos", {
+                method:"POST", 
+                body:JSON.stringify({
+                    title: "code",
+                    description: "code every day"
+                }),
+                headers:{
+                    "Content-Type": "application/json",
+                }
+            }).then(alert("hello"))
+            
+            console.log(document.getElementById('title'))
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <label for="title">
+        Title
+    </label>
+    <input id="title" type="text"/>
+    <label for="description">Description</label>
+    <input id="description" type="text"/>
+    <input type="submit" onclick="onPress()" value="Submit"/>
+    </form>
+    
+</body>
+</html>
